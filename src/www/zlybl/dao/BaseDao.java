@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class BaseDao {
     String driver = "com.mysql.cj.jdbc.Driver";
-    String url = "jdbc:mysql://localhost:3306/mybld?serverTimezone=GMT";
+    String url = "jdbc:mysql://localhost:3306/db_javaWeb_library?serverTimezone=GMT";
     String jdbcUser = "root";
     String jdbcPwd = "12345678";
     protected Connection coon = null;

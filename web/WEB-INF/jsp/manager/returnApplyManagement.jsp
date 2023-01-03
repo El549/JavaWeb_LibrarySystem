@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="www.zlybl.model.Apply" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
@@ -30,12 +31,22 @@
         <td><%=apply.getUserId()%></td>
         <td><%=apply.getBookId()%></td>
         <td><%=apply.getApplyStatus()%></td>
-        <td>
-            <a href="modApply?applyId=<%=apply.getApplyId()%>&userId=<%=apply.getUserId()%>&bookId=<%=apply.getBookId()%>&applyType=<%=apply.isApplyType()%>&applyStatus=1">同意申请</a>
-        </td>
-        <td>
-            <a href="modApply?applyId=<%=apply.getApplyId()%>&userId=<%=apply.getUserId()%>&bookId=<%=apply.getBookId()%>&applyType=<%=apply.isApplyType()%>&applyStatus=2">拒绝申请</a>
-        </td>
+        <c:set var="applyStatus">
+            <%=apply.getApplyStatus()%>
+        </c:set>
+        <c:if test="${applyStatus == 0}">
+            <td>
+                <a href="modApply?applyId=<%=apply.getApplyId()%>&userId=<%=apply.getUserId()%>&bookId=<%=apply.getBookId()%>&applyType=<%=apply.isApplyType()%>&applyStatus=1">同意申请</a>
+            </td>
+            <td>
+                <a href="modApply?applyId=<%=apply.getApplyId()%>&userId=<%=apply.getUserId()%>&bookId=<%=apply.getBookId()%>&applyType=<%=apply.isApplyType()%>&applyStatus=2">拒绝申请</a>
+            </td>
+        </c:if>
+        <c:if test="${applyStatus != 0}">
+            <td>
+                已处理
+            </td>
+        </c:if>
 
     </tr>
     <%

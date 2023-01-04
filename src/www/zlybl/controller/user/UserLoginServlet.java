@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "UserLoginServlet", value = "/user/userLogin")
+@WebServlet(name = "UserLoginServlet", value = "/userLogin")
 public class UserLoginServlet extends HttpServlet {
 
     UserService userService = new UserServiceImpl();
@@ -49,7 +49,7 @@ public class UserLoginServlet extends HttpServlet {
             //将user存入session
             session.setAttribute("user", user);
 //            req.getRequestDispatcher("/user/userHome.do").forward(req,resp);
-            resp.sendRedirect("userHome.do");
+            resp.sendRedirect("user/userHome.do");
         } else {
             resp.sendRedirect("userLogin.do");
         }

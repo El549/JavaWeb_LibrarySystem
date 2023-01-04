@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet("/user/userRegister")
+@WebServlet("/userRegister")
 public class UserRegisterServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
 
@@ -31,7 +31,7 @@ public class UserRegisterServlet extends HttpServlet {
         if (userService.userRegister(user)) {
             //弹框提示注册成功，分配的id
             session.setAttribute("user", user);
-            resp.sendRedirect("userRegisterSuccess.do");
+            resp.sendRedirect("user/userRegisterSuccess.do");
         } else {
             resp.sendRedirect("userRegister.do");
         }

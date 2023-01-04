@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "ManagerLoginServlet", value = "/manager/managerLogin")
+@WebServlet(name = "ManagerLoginServlet", value = "/managerLogin")
 public class ManagerLoginServlet extends HttpServlet {
 
     ManagerService managerService = new ManagerServiceImpl();
@@ -52,7 +52,7 @@ public class ManagerLoginServlet extends HttpServlet {
         if (manager != null) {
             //将manager存入session
             session.setAttribute("manager", manager);
-            resp.sendRedirect("managerHome.do");
+            resp.sendRedirect("manager/managerHome.do");
         } else {
             resp.sendRedirect("managerLogin.do");
         }

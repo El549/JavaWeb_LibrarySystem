@@ -1,6 +1,7 @@
 package www.zlybl.controller.user;
 
 import www.zlybl.model.Apply;
+import www.zlybl.model.User;
 import www.zlybl.service.ApplyService;
 import www.zlybl.service.impl.ApplyServiceImpl;
 
@@ -20,9 +21,9 @@ public class ApplyForReturnServlet extends HttpServlet {
         Boolean applyType = false;
         int applyStatus = 0;
         request.setCharacterEncoding("utf-8");
-//        apply.setUserId(Integer.parseInt(request.getParameter("userId")));
-        int userId = 001; //暂定为001 TODO
-        apply.setUserId(userId);
+        request.setCharacterEncoding("utf-8");
+        User user = (User) request.getSession().getAttribute("user");
+        apply.setUserId(user.getUserId());
         apply.setBookId(Integer.parseInt(request.getParameter("bookId")));
         apply.setApplyType(applyType);
         apply.setApplyStatus(applyStatus);

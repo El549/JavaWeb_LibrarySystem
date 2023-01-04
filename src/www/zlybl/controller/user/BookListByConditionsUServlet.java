@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "BookListByConditionsUServlet", value = "/user/bookListByConditionsU")
-public class BookListByConditionsUServlet extends HttpServlet {//TODO
+public class BookListByConditionsUServlet extends HttpServlet {
     BookService bookService = new BookServiceImpl();
 
     @Override

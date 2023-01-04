@@ -1,6 +1,7 @@
 package www.zlybl.controller.user;
 
 import www.zlybl.model.Book;
+import www.zlybl.model.User;
 import www.zlybl.service.BookService;
 import www.zlybl.service.impl.BookServiceImpl;
 
@@ -16,10 +17,10 @@ public class OutstandingBookListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-//        int userId = Integer.parseInt(request.getParameter("userId"));
-        int userId = 001; //暂定为001 TODO
+        User user = (User) request.getSession().getAttribute("user");
+
         //获取图书列表，并保存到请求范围中
-        List<Book> bookList = bookService.findBooksByUserId(userId);
+        List<Book> bookList = bookService.findBooksByUserId(user.getUserId());
         request.setAttribute("bookList",bookList);
 
         //转跳到响应的视图界面

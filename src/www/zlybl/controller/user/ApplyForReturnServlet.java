@@ -1,0 +1,37 @@
+package www.zlybl.controller.user;
+
+import www.zlybl.model.Apply;
+import www.zlybl.service.ApplyService;
+import www.zlybl.service.impl.ApplyServiceImpl;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet(name = "ApplyForReturnServlet", value = "/user/applyForReturn")
+public class ApplyForReturnServlet extends HttpServlet {
+    ApplyService applyService = new ApplyServiceImpl();
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Apply apply = new Apply();
+        Boolean applyType = false;
+        int applyStatus = 0;
+        request.setCharacterEncoding("utf-8");
+//        apply.setUserId(Integer.parseInt(request.getParameter("userId")));
+        int userId = 001; //暂定为001 TODO
+        apply.setUserId(userId);
+        apply.setBookId(Integer.parseInt(request.getParameter("bookId")));
+        apply.setApplyType(applyType);
+        apply.setApplyStatus(applyStatus);
+
+        //调用相应的业务逻辑方法执行添加用户的操作,并根据结果跳转到相应界面
+        if(applyService.applyForLoan(apply)){
+            response.sendRedirect("success.do");
+        }else {
+            response.sendRedirect("failed.do");
+        }
+    }
+}

@@ -6,8 +6,10 @@ public class BaseDao {
     String driver = "com.mysql.cj.jdbc.Driver";
     String url = "jdbc:mysql://localhost:3306/db_javaWeb_library?serverTimezone=GMT";
     String jdbcUser = "root";
-    String jdbcPwd = "ym0411rr";
-    protected Connection coon = null;
+
+    String jdbcPwd = "12345678";
+    protected Connection conn = null;
+
     protected Statement stmt = null;
     protected PreparedStatement pstmt = null;
     protected ResultSet rs = null;
@@ -20,7 +22,7 @@ public class BaseDao {
             //加载驱动
             Class.forName(driver).newInstance();
             //链接数据库
-            coon = DriverManager.getConnection(url, jdbcUser, jdbcPwd);
+            conn = DriverManager.getConnection(url, jdbcUser, jdbcPwd);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -37,11 +39,12 @@ public class BaseDao {
             if (stmt != null && !stmt.isClosed()) {
                 stmt.close();
             }
-            if (coon != null && !coon.isClosed()) {
-                coon.close();
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
 }

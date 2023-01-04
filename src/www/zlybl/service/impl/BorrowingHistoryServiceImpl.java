@@ -19,6 +19,7 @@ public class BorrowingHistoryServiceImpl implements BorrowingHistoryService {
     @Override
     public List<BorrowingHistory> HistoryListByUserId(int userId) {
         return borrowingHistoryDao.HistoryListByUserId(userId);
+    }
 
     @Override
     public int addBorrowingHistory(int bookId,int userId) {

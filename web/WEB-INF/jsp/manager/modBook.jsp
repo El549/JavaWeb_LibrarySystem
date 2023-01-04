@@ -12,8 +12,6 @@
     作者:<input name="author" type="text" value="${book.author}"><br>
     出版社:<input name="press" type="text" value="${book.press}"><br>
     小说类别:<input name="bookClass" type="text" value="${book.bookClass}"><br>
-    小说状态:<input name="bookStatus" type="radio" value="true"${book.bookStatus?"checked":""}>未借出
-    <input name="bookStatus" type="radio" value="false" ${book.bookStatus?"":"checked"}>已被借出<br>
     <input type="submit" value="修改">
 </form>
 </body>

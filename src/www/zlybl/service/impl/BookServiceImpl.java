@@ -39,7 +39,8 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public boolean DelBook(int BookId) {
-        return bookDao.DelBook(BookId)==1?true:false;
+        return bookDao.DelBook(BookId) == 1 ? true : false;
+    }
 
     @Override
     public List<Book> findAllBooksByPage(int page, int pageSize) {

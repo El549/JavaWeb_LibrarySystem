@@ -14,10 +14,10 @@ public class BorrowingHistoryDaoImpl extends BaseDao implements BorrowingHistory
     @Override
     public List<BorrowingHistory> HISTORY_LIST() {
         List<BorrowingHistory> historyList=new ArrayList<>();
-        String sql = "SELECT * FROM borrowing_history";
+        String sql = "SELECT * FROM borrowing_history ORDER BY history_id DESC ";
         try {
             //创建语句对象
-            stmt=coon.createStatement();
+            stmt=conn.createStatement();
             //执行sql
             rs = stmt.executeQuery(sql);
             //处理结果
@@ -26,8 +26,8 @@ public class BorrowingHistoryDaoImpl extends BaseDao implements BorrowingHistory
                 history.setHistoryId(rs.getInt("history_id"));
                 history.setBookId(rs.getInt("book_id"));
                 history.setUserId(rs.getInt("user_id"));
-                history.setBorrowingTime(rs.getString("borrowed_time"));
-                history.setReturnedTime(rs.getString("returned_time"));
+                history.setBorrowedTime(rs.getDate("borrowed_time"));
+                history.setReturnedTime(rs.getDate("returned_time"));
                 historyList.add(history);
             }
         }catch (Exception e){
@@ -39,10 +39,10 @@ public class BorrowingHistoryDaoImpl extends BaseDao implements BorrowingHistory
     @Override
     public List<BorrowingHistory> HistoryListByUserId(int userId) {
         List<BorrowingHistory> histories=new ArrayList<>();
-        String sql = "SELECT * FROM borrowing_history where user_id=?";
+        String sql = "SELECT * FROM borrowing_history where user_id=? ORDER BY history_id DESC ";
         try {
             //创建语句对象
-            pstmt=coon.prepareStatement(sql);
+            pstmt=conn.prepareStatement(sql);
             pstmt.setInt(1,userId);
             //执行sql
             rs = pstmt.executeQuery();
@@ -51,8 +51,8 @@ public class BorrowingHistoryDaoImpl extends BaseDao implements BorrowingHistory
                 history.setHistoryId(rs.getInt("history_id"));
                 history.setBookId(rs.getInt("book_id"));
                 history.setUserId(rs.getInt("user_id"));
-                history.setBorrowingTime(rs.getString("borrowed_time"));
-                history.setReturnedTime(rs.getString("returned_time"));
+                history.setBorrowedTime(rs.getDate("borrowed_time"));
+                history.setReturnedTime(rs.getDate("returned_time"));
                 histories.add(history);
             }
         }catch (Exception e){

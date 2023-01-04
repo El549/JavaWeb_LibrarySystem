@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/user/MyApplyList")
+@WebServlet("/user/myApplyList")
 public class MyApplyListServlet extends HttpServlet {
     ApplyService applyService=new ApplyServiceImpl();
     @Override

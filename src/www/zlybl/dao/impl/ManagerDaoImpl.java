@@ -9,12 +9,13 @@ import java.sql.SQLException;
 public class ManagerDaoImpl extends BaseDao implements ManagerDao {
 
     @Override
-    public Manager findManagerByNameAndPwd(String managerName, String managerPassword) {
+    public Manager findManagerByIdAndPwd(int managerId, String managerPassword) {
         Manager manager = null;
-        String sql = "SELECT * FROM manager WHERE manager_name=? AND manager_password=?";
+        String sql = "SELECT * FROM manager WHERE manager_id=? AND manager_password=?";
+        System.out.println(managerId+managerPassword);
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, managerName);
+            pstmt.setInt(1, managerId);
             pstmt.setString(2, managerPassword);
             rs = pstmt.executeQuery();
             while (rs.next()) {

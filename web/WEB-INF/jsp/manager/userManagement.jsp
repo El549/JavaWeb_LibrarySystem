@@ -7,7 +7,6 @@
 </head>
 <body>
 
-<a href="perInfoManagement.do">个人信息</a>
 <table>
     <caption>用户列表</caption>
     <tr>
@@ -34,7 +33,7 @@
         <td><%=user.getUserPassword()%></td>
         <td>
             <a href="resetUserPwd?id=<%=user.getUserId()%>">重置密码</a>
-            <a href="del?id=<%=user.getUserId()%>">删除用户</a>
+            <a href="delUserM?id=<%=user.getUserId()%>">删除用户</a>
         </td>
     </tr>
     <%

@@ -15,7 +15,8 @@
     <a href="">书籍管理</a>
     <a href="userList">用户管理</a>
     <a href="">借阅历史</a>
-    <a href="">申请记录</a>
+    <a href="loanApplyList">借书申请记录</a>
+    <a href="returnApplyList">还书申请记录</a>
     <a href="managerLoginOut">退出登录</a>
 </div>
 

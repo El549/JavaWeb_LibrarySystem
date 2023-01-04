@@ -8,7 +8,13 @@ import www.zlybl.service.ApplyService;
 import java.util.List;
 
 public class ApplyServiceImpl implements ApplyService {
-    ApplyDao applyDao = new ApplyDaoImpl();
+
+    ApplyDao applyDao=new ApplyDaoImpl();
+    @Override
+    public List<Apply> MyApply(int userId) {
+        return applyDao.MyApply(userId);
+    }
+
     @Override
     public boolean applyForLoan(Apply apply) {
         return applyDao.addApply(apply) == 1 ? true : false;

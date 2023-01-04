@@ -7,8 +7,19 @@ import www.zlybl.service.BorrowingHistoryService;
 
 import java.util.Date;
 
+import java.util.List;
+
 public class BorrowingHistoryServiceImpl implements BorrowingHistoryService {
-    BorrowingHistoryDao borrowingHistoryDao = new BorrowingHistoryDaoImpl();
+    BorrowingHistoryDao borrowingHistoryDao =new BorrowingHistoryDaoImpl();
+    @Override
+    public List<BorrowingHistory> HistoryList() {
+        return borrowingHistoryDao.HISTORY_LIST();
+    }
+
+    @Override
+    public List<BorrowingHistory> HistoryListByUserId(int userId) {
+        return borrowingHistoryDao.HistoryListByUserId(userId);
+
     @Override
     public int addBorrowingHistory(int bookId,int userId) {
         BorrowingHistory borrowingHistory = new BorrowingHistory();

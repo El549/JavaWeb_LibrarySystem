@@ -1,6 +1,8 @@
 package www.zlybl.model;
 
-public class Apply {
+import java.io.Serializable;
+
+public class Apply implements Serializable {
     private int applyId;
     private int userId;
     private int bookId;
@@ -68,4 +70,5 @@ public class Apply {
                 ", applyStatus=" + applyStatus +
                 '}';
     }
+
 }

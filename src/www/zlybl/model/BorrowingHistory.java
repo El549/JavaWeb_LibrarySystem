@@ -2,12 +2,14 @@ package www.zlybl.model;
 
 import java.util.Date;
 
-public class BorrowingHistory {
+import java.io.Serializable;
+
+public class BorrowingHistory implements Serializable {
     private int historyId;
     private int bookId;
     private int userId;
-    private Date borrowedTime;
-    private Date returnedTime;
+    private String borrowingTime;
+    private String returnedTime;
 
     public BorrowingHistory() {
     }

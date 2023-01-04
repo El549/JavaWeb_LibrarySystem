@@ -19,8 +19,11 @@ public interface UserService {
     boolean resetPassword(String sid);
 
     boolean delUser(String sid);
+    
+    //用户登录
+    User userLogin(int userId, String userPassword);
 
-
-
-
+    boolean userRegister(User user);
+    
+    int userGetLastId();
 }

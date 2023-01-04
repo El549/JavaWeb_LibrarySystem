@@ -51,5 +51,19 @@ public class UserServiceImpl implements UserService {
         return userDao.delete(id)==1?true:false;
     }
 
+    @Override
+    public User userLogin(int userId, String userPassword) {
+        return userDao.findByIdAndPwd(userId, userPassword);
+    }
+
+    @Override
+    public boolean userRegister(User user) {
+        return userDao.userRegister(user) == 1;
+    }
+
+    @Override
+    public int userGetLastId() {
+        return userDao.userGetLastId();
+    }
 
 }

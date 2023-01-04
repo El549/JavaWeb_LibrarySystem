@@ -1,5 +1,7 @@
 package www.zlybl.model;
 
+import java.util.Date;
+
 import java.io.Serializable;
 
 public class BorrowingHistory implements Serializable {
@@ -8,6 +10,17 @@ public class BorrowingHistory implements Serializable {
     private int userId;
     private String borrowingTime;
     private String returnedTime;
+
+    public BorrowingHistory() {
+    }
+
+    public BorrowingHistory(int historyId, int bookId, int userId, Date borrowedTime, Date returnedTime) {
+        this.historyId = historyId;
+        this.bookId = bookId;
+        this.userId = userId;
+        this.borrowedTime = borrowedTime;
+        this.returnedTime = returnedTime;
+    }
 
     public int getHistoryId() {
         return historyId;
@@ -33,30 +46,30 @@ public class BorrowingHistory implements Serializable {
         this.userId = userId;
     }
 
-    public String getBorrowingTime() {
-        return borrowingTime;
+    public Date getBorrowedTime() {
+        return borrowedTime;
     }
 
-    public void setBorrowingTime(String borrowingTime) {
-        this.borrowingTime = borrowingTime;
+    public void setBorrowedTime(Date borrowedTime) {
+        this.borrowedTime = borrowedTime;
     }
 
-    public String getReturnedTime() {
+    public Date getReturnedTime() {
         return returnedTime;
     }
 
-    public void setReturnedTime(String returnedTime) {
+    public void setReturnedTime(Date returnedTime) {
         this.returnedTime = returnedTime;
     }
 
     @Override
     public String toString() {
-        return "BorrowingHistory{" +
+        return "borrowingHistory{" +
                 "historyId=" + historyId +
                 ", bookId=" + bookId +
                 ", userId=" + userId +
-                ", borrowingTime='" + borrowingTime + '\'' +
-                ", returnedTime='" + returnedTime + '\'' +
+                ", borrowedTime=" + borrowedTime +
+                ", returnedTime=" + returnedTime +
                 '}';
     }
 }

@@ -3,6 +3,8 @@ package www.zlybl.model;
 import java.io.Serializable;
 
 public class Book implements Serializable {
+
+public class Book {
     private int bookId;
     private String bookCover;
     private String bookName;
@@ -10,6 +12,19 @@ public class Book implements Serializable {
     private String press;
     private String bookClass;
     private boolean bookStatus;
+
+    public Book() {
+    }
+
+    public Book(int bookId, String bookCover, String bookName, String author, String press, String bookClass, boolean bookStatus) {
+        this.bookId = bookId;
+        this.bookCover = bookCover;
+        this.bookName = bookName;
+        this.author = author;
+        this.press = press;
+        this.bookClass = bookClass;
+        this.bookStatus = bookStatus;
+    }
 
     public int getBookId() {
         return bookId;

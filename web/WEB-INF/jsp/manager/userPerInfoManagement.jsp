@@ -5,7 +5,6 @@
     <title>用户个人信息管理</title>
 </head>
 <body>
-<body>
 
 <table>
     <tr>
@@ -32,14 +31,8 @@
     <tr>
         <td>
             <a href="resetUserPwd?id=<%=user.getUserId()%>">重置密码</a>
-            <a href="del?id=<%=user.getUserId()%>">删除用户</a>
+            <a href="delUserM?id=<%=user.getUserId()%>">删除用户</a>
         </td>
-<%--        <form action="resetUserPwd" method="post">--%>
-<%--            <input type="text" name="userId"><input type="submit" value="重置密码">--%>
-<%--        </form>--%>
-<%--        <form action="delUser" method="post">--%>
-<%--            <input type="text" name="userId"><input type="submit" value="删除用户">--%>
-<%--        </form>--%>
     </tr>
 </table>
 

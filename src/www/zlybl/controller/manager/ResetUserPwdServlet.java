@@ -25,11 +25,10 @@ public class ResetUserPwdServlet extends HttpServlet {
         //在数据库中查找
         if(userService.resetPassword(sid)){
             //密码重置成功，重新登陆
-            //resp.sendRedirect("/userLogOut");
-            System.out.println("密码重置成功");
+            resp.sendRedirect("userList");
         }else{
             //密码重置失败
-            resp.sendRedirect("queryUserById");
+            resp.sendRedirect("userList");
         }
 
     }

@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/manager/BorrowingHistoryList")
+@WebServlet("/manager/borrowingHistoryList")
 public class BorrowingHistoryListServlet extends HttpServlet {
     BorrowingHistoryService borrowingHistoryService =new BorrowingHistoryServiceImpl();
     @Override

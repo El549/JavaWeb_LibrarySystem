@@ -27,7 +27,6 @@ public class UserRegisterServlet extends HttpServlet {
         user.setUserId((userId));
         user.setUserName(req.getParameter("userName"));
         user.setUserPassword(req.getParameter("userPassword"));
-//        System.out.println(user);
         HttpSession session = req.getSession();
         if (userService.userRegister(user)) {
             //弹框提示注册成功，分配的id

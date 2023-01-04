@@ -5,7 +5,7 @@
     <title>借阅历史</title>
 </head>
 <body>
-<form action="HistoryListByUserId" method="post">
+<form action="historyListByUserId" method="post">
     用户id:<input name="userId" type="text">
     <input type="submit" value="搜索">
 </form>
@@ -23,7 +23,7 @@
             <td>${s.count}</td>
             <td>${history.bookId}</td>
             <td>${history.userId}</td>
-            <td>${history.borrowingTime}</td>
+            <td>${history.borrowedTime}</td>
             <td>${empty history.returnedTime?"还未还书":history.returnedTime}</td>
         </tr>
     </c:forEach>

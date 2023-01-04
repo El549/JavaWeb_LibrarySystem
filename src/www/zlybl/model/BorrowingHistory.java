@@ -8,8 +8,8 @@ public class BorrowingHistory implements Serializable {
     private int historyId;
     private int bookId;
     private int userId;
-    private String borrowingTime;
-    private String returnedTime;
+    private Date borrowedTime;
+    private Date returnedTime;
 
     public BorrowingHistory() {
     }

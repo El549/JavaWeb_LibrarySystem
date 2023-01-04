@@ -19,7 +19,7 @@
       <td>${s.count}</td>
       <td>${history.bookId}</td>
       <td>${history.userId}</td>
-      <td>${history.borrowingTime}</td>
+      <td>${history.borrowedTime}</td>
       <td>${empty history.returnedTime?"还未还书":history.returnedTime}</td>
     </tr>
   </c:forEach>

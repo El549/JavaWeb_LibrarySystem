@@ -18,7 +18,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         String sql = "SELECT * FROM book ORDER BY book_id LIMIT ?,?";
         try {
             //创建语句对象
-            pstmt=coon.prepareStatement(sql);
+            pstmt=conn.prepareStatement(sql);
             pstmt.setInt(1,start);
             pstmt.setInt(2,num);
             //执行sql
@@ -80,7 +80,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
                 "AND (book_class LIKE CONCAT('%',?,'%') OR book_class='')";
         try {
             //创建语句对象
-            pstmt=coon.prepareStatement(sql);
+            pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,book.getBookName());
             pstmt.setString(2,book.getAuthor());
             pstmt.setString(3,book.getPress());
@@ -112,7 +112,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         String sql = "SELECT * FROM book where book_id=?";
         try {
             //创建语句对象
-            pstmt=coon.prepareStatement(sql);
+            pstmt=conn.prepareStatement(sql);
             pstmt.setInt(1,id);
             //执行sql
             rs = pstmt.executeQuery();
@@ -175,11 +175,12 @@ public class BookDaoImpl extends BaseDao implements BookDao {
                 book.setPress(rs.getString("press"));
                 book.setBookClass(rs.getString("book_class"));
                 book.setBookStatus(rs.getBoolean("book_status"));
+                bookList.add(book);
             }
         }catch (Exception e){
             e.printStackTrace();
         }
-        return book;
+        return bookList;
     }
 
     //添加图书
@@ -190,7 +191,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
                 "values(?,?,?,?,?,?)";
         try {
             //创建语句对象
-            pstmt=coon.prepareStatement(sql);
+            pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,book.getBookCover());
             pstmt.setString(2,book.getBookName());
             pstmt.setString(3,book.getAuthor());
@@ -226,18 +227,17 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     @Override
     public int ModBook(Book book) {
         int rows=0;
-        String sql = "UPDATE book SET book_cover=?,book_name=?,author=?,press=?,book_class=?,book_status=?" +
+        String sql = "UPDATE book SET book_cover=?,book_name=?,author=?,press=?,book_class=?" +
                 " WHERE book_id=?";
         try {
             //创建语句对象
-            pstmt=coon.prepareStatement(sql);
+            pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,book.getBookCover());
             pstmt.setString(2,book.getBookName());
             pstmt.setString(3,book.getAuthor());
             pstmt.setString(4,book.getPress());
             pstmt.setString(5,book.getBookClass());
-            pstmt.setBoolean(6,book.isBookStatus());
-            pstmt.setInt(7,book.getBookId());
+            pstmt.setInt(6,book.getBookId());
             //执行sql
             rows = pstmt.executeUpdate();
         }catch (Exception e){
@@ -252,7 +252,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         String sql = "DELETE FROM book WHERE book_id=?";
         try {
             //创建语句对象
-            pstmt=coon.prepareStatement(sql);
+            pstmt=conn.prepareStatement(sql);
             pstmt.setInt(1,bookId);
             //执行sql
             rows = pstmt.executeUpdate();

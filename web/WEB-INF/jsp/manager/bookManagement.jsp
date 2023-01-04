@@ -6,7 +6,6 @@
 </head>
 <body>
 <a href="addBook.do">添加图书</a><br>
-<a href="BorrowingHistoryList">查看借阅历史</a>
 <form action="bookListByConditions" method="post">
     书名:<input name="bookName" type="text">
     作者:<input name="author" type="text">

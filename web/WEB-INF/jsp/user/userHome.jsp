@@ -15,8 +15,8 @@
     <a href="modUserInfo">个人信息管理</a>
     <a href="bookListU">书籍查询</a>
     <a href="outstandingBookList">未还书籍查询</a>
-    <a href="">借阅历史查询</a>
-    <a href="">申请记录查询</a>
+    <a href="borrowingHistoryListByUserId?userId=${user.userId}">借阅历史查询</a>
+    <a href="myApplyList?userId=${user.userId}">申请记录查询</a>
     <a href="userLogout">退出登录</a>
     ${user.userName}
 </div>

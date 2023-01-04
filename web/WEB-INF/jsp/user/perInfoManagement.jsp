@@ -10,7 +10,7 @@
     User user= (User) request.getAttribute("user");
 %>
 <form action="modUserInfo" method="post" >
-    用户名:<input name="userId" type="text" value="<%=user.getUserId()%>" readonly><br>
+    用户id:<input name="userId" type="text" value="<%=user.getUserId()%>" readonly><br>
     用户名:<input name="userName" type="text" value="<%=user.getUserName()%>"><br>
     密码:<input name="userPassword" type="password" value="<%=user.getUserPassword()%>"><br>
     <input type="submit" value="修改">

@@ -6,12 +6,15 @@ public class BaseDao {
     String driver = "com.mysql.cj.jdbc.Driver";
     String url = "jdbc:mysql://localhost:3306/db_javaWeb_library?serverTimezone=GMT";
     String jdbcUser = "root";
+
     String jdbcPwd = "12345678";
     protected Connection conn = null;
+
     protected Statement stmt = null;
     protected PreparedStatement pstmt = null;
     protected ResultSet rs = null;
     public BaseDao() {
+
         connect();
     }
     protected void connect() {

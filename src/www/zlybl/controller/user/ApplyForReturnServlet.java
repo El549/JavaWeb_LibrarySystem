@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "ApplyForReturnServlet", value = "/user/applyForReturn")
 public class ApplyForReturnServlet extends HttpServlet {
@@ -21,7 +22,7 @@ public class ApplyForReturnServlet extends HttpServlet {
         Boolean applyType = false;
         int applyStatus = 0;
         request.setCharacterEncoding("utf-8");
-        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         User user = (User) request.getSession().getAttribute("user");
         apply.setUserId(user.getUserId());
         apply.setBookId(Integer.parseInt(request.getParameter("bookId")));
@@ -30,9 +31,15 @@ public class ApplyForReturnServlet extends HttpServlet {
 
         //调用相应的业务逻辑方法执行添加用户的操作,并根据结果跳转到相应界面
         if(applyService.applyForLoan(apply)){
-            response.sendRedirect("success.do");
+            PrintWriter out = response.getWriter();
+            out.println("<script>alert('申请成功');" +
+                    "window.location.href= 'bookListU'</script>");
+            out.close();
         }else {
-            response.sendRedirect("failed.do");
+            PrintWriter out = response.getWriter();
+            out.println("<script>alert( '申请失败');"+
+                    "window.location.href= 'bookListU'</script>");
+            out.close();
         }
     }
 }

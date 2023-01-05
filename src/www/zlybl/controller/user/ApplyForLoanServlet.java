@@ -20,6 +20,7 @@ public class ApplyForLoanServlet extends HttpServlet {
         Boolean applyType = true;
         int applyStatus = 0;
         request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         User user = (User) request.getSession().getAttribute("user");
         apply.setUserId(user.getUserId());
         apply.setBookId(Integer.parseInt(request.getParameter("bookId")));

@@ -167,7 +167,7 @@
                                     <p class="srBookPressP">${book.press}</p>
                                 </div>
                                 <div class="srBookClass">
-                                    <p class="srBookClassP">外国.历史.文学.短篇小说</p>
+                                    <p class="srBookClassP">${book.bookClass}</p>
                                 </div>
                                 <div class="srBookStatus">
                                     <p class="srBookStatusP">

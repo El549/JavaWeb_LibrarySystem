@@ -148,7 +148,7 @@
                          style="background-color: rgba(255,255,255,0.8)">
                         <div class="col">
                             <div class="srBookCover">
-                                <img src="${book.bookCover}">
+                                <img  src="${book.bookCover}">
                             </div>
                             <div class="srRight">
                                 <div class="srBookName">

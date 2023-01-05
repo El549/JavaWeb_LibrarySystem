@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List" %>
 <%@ page import="www.zlybl.model.User" %>
 <%@ page import="www.zlybl.model.Apply" %>
@@ -86,15 +87,24 @@
                                 <td><%=apply.getApplyId()%></td>
                                 <td><%=apply.getUserId()%></td>
                                 <td><%=apply.getBookId()%></td>
-                                <td><%=apply.getApplyStatus()%></td>
                                 <c:set var="applyStatus">
                                     <%=apply.getApplyStatus()%>
                                 </c:set>
                                 <c:if test="${applyStatus == 0}">
+                                    <td>申请中
+                                    </td>
+                                </c:if>
+                                <c:if test="${applyStatus == 1}">
+                                    <td>申请通过
+                                    </td>
+                                </c:if>
+                                <c:if test="${applyStatus == 2}">
+                                    <td>申请不通过
+                                    </td>
+                                </c:if>
+                                <c:if test="${applyStatus == 0}">
                                     <td>
                                         <a href="modApply?applyId=<%=apply.getApplyId()%>&userId=<%=apply.getUserId()%>&bookId=<%=apply.getBookId()%>&applyType=<%=apply.isApplyType()%>&applyStatus=1">同意申请</a>
-                                    </td>
-                                    <td>
                                         <a href="modApply?applyId=<%=apply.getApplyId()%>&userId=<%=apply.getUserId()%>&bookId=<%=apply.getBookId()%>&applyType=<%=apply.isApplyType()%>&applyStatus=2">拒绝申请</a>
                                     </td>
                                 </c:if>

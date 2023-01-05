@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.openSidebar {
+    position: fixed;
+    display: block;
+    width: 12%;
+    height: 100vh;
+    float: left;
+    left: -9%;
+    text-align: center;
+    background-color: rgb(223,236,244);
+}
+
+.openSidebar img {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    right: 5%;
+    margin: auto;
+}
+
+
+.mySidebar {
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 12%;
+    /*min-width: 200px;*/
+    float: left;
+    padding-top: 5%;
+    left: -9vw;
+    background-color: rgb(223,236,244);
+    /*background-image: linear-gradient(to bottom, rgb(246,246,246) , rgb(5,144,223));*/
+}
+
+.mySidebar .closeSidebar {
+
+    padding-top: 8%;
+    padding-bottom: 10%;
+    padding-left: 15%;
+    border: 1px rgb(255, 255, 255) solid;
+    border-right: 20px rgb(255, 255, 255) solid;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 0 8px 0 #d0d0d0;
+    border-top-right-radius: 40px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.mySidebar .closeSidebar img {
+    width: 2vw;
+
+}
+
+.mySidebar .bar-item {
+    display: block;
+    padding-left: 10%;
+    line-height: 3em;
+}
+
+.mySidebar a {
+    color: black;
+    text-decoration: none;
+}
+
+.mySidebar .bar-item:hover {
+    animation: sidebarHover  0.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes  sidebarHover{
+    from{}
+    to{background-color: rgb(212,231,242)}
+}
+

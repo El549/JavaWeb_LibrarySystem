@@ -9,6 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "ApplyForLoanServlet", value = "/user/applyForLoan")
 public class ApplyForLoanServlet extends HttpServlet {
@@ -27,9 +28,16 @@ public class ApplyForLoanServlet extends HttpServlet {
 
         //调用相应的业务逻辑方法执行添加用户的操作,并根据结果跳转到相应界面
         if(applyService.applyForLoan(apply)){
-            response.sendRedirect("success.do");
+            PrintWriter out = response.getWriter();
+            out.println("<script>alert('申请成功');" +
+                    "window.location.href= 'bookListU'</script>");
+            out.close();
         }else {
-            response.sendRedirect("failed.do");
+            PrintWriter out = response.getWriter();
+            out.println("<script>alert( '申请失败');"+
+                    "window.location.href= 'bookListU'</script>");
+            out.close();
+//            response.sendRedirect("failed.do");
         }
     }
 }

@@ -8,15 +8,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>管理员登录</title>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/managerLogin.css">
+    <title>managerLogin</title>
 </head>
 <body>
-<div>
-        <form action="managerLogin" method="post">
-            用户名：<input type="text" name="managerId" ><br>
-            密码：<input type="password" name="managerPassword" ><br>
-            <input type="submit" value="登录">
-        </form>
+<div class="backImg">
+    <div class="container">
+        <div class="div-form">
+            <form action="managerLogin" method="post" class="mlogin">
+                <h1>mLogin</h1>
+                <input type="text" name="managerId" placeholder="帐号">
+                <input type="password" name="managerPassword" placeholder="密码">
+                <button type="submit">Login</button>
+                <div class="managerLogin">
+                    <span>切换<a href="../user/userLoginPage">用户登录</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

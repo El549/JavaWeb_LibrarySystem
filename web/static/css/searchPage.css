@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    /*min-width: 1000px;*/
+    overflow-x: hidden;
+    font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+    /*background-color: rgb(255, 255, 255);*/
+}
+
+.container {
+    width: 100%;
+    /*height: 2000px;*/
+    padding-right: 0;
+    padding-left: 0;
+    background-color: #9fcdff;
+
+}
+
+.container_1 {
+    /*position: relative;*/
+    width: 97%;
+    /*height: 1000px;*/
+    float: right;
+    left: 0;
+    /*background-color: #2a3f54;*/
+}
+
+.searchInputBox {
+    width: 80%;
+    height: 62px;
+    margin: auto;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.searchInputBox:hover {
+    border: 1px solid rgb(5, 144, 223);
+}
+
+.searchInputBox:checked {
+    border: 1px solid rgb(5, 144, 223);
+}
+
+.searchInputBox input {
+    width: 60%;
+    border: none;
+    outline: none;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+}
+
+.searchInputBox button {
+    border: none;
+    /*background-color: rgb(223,236,244);*/
+    background-color: rgb(255, 255, 255);
+}
+
+.search {
+    height: 60px;
+}
+
+.search img {
+    height: 40px;
+}
+
+.searchIntroText {
+    height: 100%;
+    margin-left: 5%;
+}
+
+.searchIntroText p {
+    color: black;
+    line-height: 60px;
+    float: left;
+    width: 15%;
+    border-right: 1px solid gray;
+    padding-right: 10px
+}
+
+.searchInputBoxC2 {
+    float: left;
+    width: 60%;
+    margin-left: 40px
+}
+
+.searchRightBox {
+    float: right;
+    width: 30%;
+    height: 60px;
+    padding-top: 10px;
+}
+
+.searchRightBox .searchRightBoxC {
+    display: inline-block;
+    float: right;
+    height: 60px;
+    width: 33%
+}
+
+.searchRightBoxC a img {
+    width: 30%;
+    margin-top: 5px;
+}
+
+.searchRightBoxC a p {
+    position: absolute;
+    display: inline;
+    color: #000;
+    transform: translate(0, 10px);
+}
+
+.searchResultContainer {
+    height: auto;
+    width: 100%;
+    padding-top: 150px;
+    /*background-color: #0c5460*/
+    background: url("../img/1.jpg");
+}
+
+.searchResultBox {
+    width: 100%;
+    height: 1400px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*background-color: rgba(255, 255, 255, 1);*/
+    text-align: center;
+}
+
+.searchResults {
+    width: 61%;
+    height: 500px;
+    margin: auto;
+    /*height: 100%;*/
+
+}
+
+.searchResults .row{
+
+}
+.searchResults .row .col {
+    height: 200px;
+    margin: 10px 0 10px 20px;
+    /*border: 1px solid black;*/
+    /*background-color: #9fcdff;*/
+}
+
+.searchResults .srBookCover {
+    width: 25%;
+    height: 100%;
+    float: left;
+    margin-left: 10%;
+    /*margin-top: 10px;*/
+    /*background-color: #1e7e34;*/
+}
+
+.srBookCover img {
+    width: 90%;
+    /*margin-top: 10px;*/
+    /*height: 100%;*/
+}
+
+.srRight {
+    width: auto;
+    min-width: 20%;
+    height: 100%;
+    float: left;
+    margin-left: 2%;
+    /*background-color: #0b2e13;*/
+}
+
+.srBookName {
+    width: auto;
+    min-width: 20%;
+    height: 30px;
+    margin-top: 10px;
+    /*background-color: #1e7e34;*/
+}
+
+.srBookNameP {
+    float: left;
+    margin-left: 10px;
+    line-height: 30px;
+    font-size: 1.2em;
+}
+
+.srBookAuthor {
+    width: auto;
+    min-width: 20%;
+    height: 20px;
+    margin-top: 15px;
+    /*background-color: #5a6268;*/
+}
+
+.srBookAuthorP {
+    float: left;
+    margin-left: 10px;
+    margin-top: -10px;
+    line-height: 20px;
+    /*font-size: 1.2em;*/
+}
+
+.srBookPress {
+    /*width: auto;*/
+    /*min-width: 20%;*/
+    height: 20px;
+    margin-top: 20px;
+    /*background-color: #8fd19e;*/
+}
+
+.srBookPressP {
+    float: left;
+    margin-left: 10px;
+    margin-top: -20px;
+    line-height: 20px;
+    /*font-size: 1.2em;*/
+}
+
+.srBookStatus {
+    width: auto;
+    min-width: 20%;
+    height: 20px;
+    margin-top: 20px;
+    /*background-color: #5a6268;*/
+}
+
+.srBookStatusP {
+    float: left;
+    margin-left: 10px;
+    margin-top: -30px;
+    line-height: 20px;
+    /*font-size: 1.2em;*/
+}
+
+.srBookClass {
+    width: auto;
+    /*min-width: 20%;*/
+    height: 20px;
+    margin-top: 20px;
+    /*background-color: #8fd19e;*/
+}
+
+.srBookClassP {
+    float: left;
+    margin-left: 10px;
+    margin-top: -40px;
+    line-height: 20px;
+    /*font-size: 1.2em;*/
+}
+
+.srBookOperate {
+    width: 300px;
+    position: absolute;
+    /*top: 50%;*/
+    bottom: 0;
+    left: 33%;
+    right: 50%;
+    margin: auto;
+    /*background-color: #8fd19e;*/
+}
+
+.srBookOperate button {
+    /*display: inline;*/
+    width: 100px;
+    margin-left: 10px;
+}
+.srBookOperate a{
+    width: 100px;
+    margin-left: 10px;
+}
+
+
+.bottomLine {
+    width: 100%;
+    height: 1px;
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.modBookInfo{
+
+}
+
+.footer {
+    /*position: absolute;*/
+    overflow-y: hidden;
+    width: 100%;
+    height: 350px;
+    /*margin-top: 200px;*/
+    /*padding-top: 10%;*/
+    top: 200%;
+    background: linear-gradient(to bottom, rgb(223, 236, 244) 0%, rgb(223, 236, 244) 45%, rgb(5, 144, 223) 45%, rgb(5, 144, 223) 100%);
+    z-index: 0;
+}
+
+.footer .footerLeft {
+    width: 60%;
+    height: 50%;
+    /*text-align: center;*/
+    float: left;
+    margin-top: 12%;
+    /*background-color: rgb(129,199,239);*/
+}
+
+.footerLeft .footerLeftInner {
+    width: 50%;
+    margin-left: 15%;
+    text-align: left;
+    /*background-color: #1e7e34;*/
+}
+
+.footerLeftInner img {
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+.footerLeftInner p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.5em;
+    line-height: 5px;
+}
+
+.footer .footerRight {
+    width: 40%;
+    height: 100%;
+    float: left;
+    padding-top: 5%;
+    text-align: center;
+    /*background-color: bisque;*/
+}
+
+.footerRight .footerRightInner {
+    margin: auto;
+}
+
+.footerRightInner img {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.footerRightInner p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.5em;
+    line-height: 5px;
+}

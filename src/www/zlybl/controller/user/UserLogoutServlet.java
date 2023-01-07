@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "UserLogoutServlet", value = "/user/userLoginOut")
+@WebServlet(name = "UserLogoutServlet", value = "/user/userLogout")
 public class UserLogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

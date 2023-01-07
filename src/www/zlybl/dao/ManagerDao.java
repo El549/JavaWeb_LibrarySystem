@@ -4,5 +4,5 @@ import www.zlybl.model.Manager;
 
 
 public interface ManagerDao {
-    Manager findManagerByNameAndPwd(String managerName, String managerPassword);
+    Manager findManagerByIdAndPwd(int managerId, String managerPassword);
 }

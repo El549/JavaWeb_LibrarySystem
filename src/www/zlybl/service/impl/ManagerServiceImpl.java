@@ -9,7 +9,7 @@ public class ManagerServiceImpl implements ManagerService {
     ManagerDao managerDao=new ManagerDaoImpl();
 
     @Override
-    public Manager managerLogin(String managerName, String managerPassword) {
-        return managerDao.findManagerByNameAndPwd(managerName,managerPassword);
+    public Manager managerLogin(int managerId, String managerPassword) {
+        return managerDao.findManagerByIdAndPwd(managerId,managerPassword);
     }
 }
